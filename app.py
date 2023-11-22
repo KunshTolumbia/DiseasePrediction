@@ -49,10 +49,13 @@ data_dict = {
 	"predictions_classes":encoder.classes_
 }
 num = st.number_input("Enter the number of symptoms", format="%d")
-input_list=[]
-for i in range(int(num)):
-    s=st.selectbox("Select a symptom",symptom_index.keys(),key=i)
+num = int(num)  # Explicitly cast to an integer
+
+input_list = []
+for i in range(num):
+    s = st.selectbox("Select a symptom", symptom_index.keys(), key=i)
     input_list.append(s)
+
 
 def predictDisease(symptoms):
 	
