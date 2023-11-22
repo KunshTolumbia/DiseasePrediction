@@ -48,10 +48,10 @@ data_dict = {
 	"symptom_index":symptom_index,
 	"predictions_classes":encoder.classes_
 }
-num=st.number_input("enter the number of symptoms")
+num = st.number_input("Enter the number of symptoms", format="%d")
 input_list=[]
 for i in range(int(num)):
-    s=st.selectbox("select a symptom",symptom_index.keys(),key=i)
+    s=st.selectbox("Select a symptom",symptom_index.keys(),key=i)
     input_list.append(s)
 
 def predictDisease(symptoms):
