@@ -48,9 +48,7 @@ data_dict = {
 	"symptom_index":symptom_index,
 	"predictions_classes":encoder.classes_
 }
-num = st.number_input("Enter the number of symptoms", format="%d")
-num = int(num)  # Explicitly cast to an integer
-
+num = st.slider("Enter the number of symptoms", min_value=0, max_value=100, step=1)
 input_list = []
 for i in range(num):
     s = st.selectbox("Select a symptom", symptom_index.keys(), key=i)
